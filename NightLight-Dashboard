@@ -1,0 +1,978 @@
+https://www.facebook.com/groups/489882062425810/permalink/842945760452770/
+
+Home Assistant Dashboard based on flex-horseshoe-card  and google Dark Theme 
+
+Pre-reqs: 
+https://github.com/AmoebeLabs/flex-horseshoe-card
+
+https://community.home-assistant.io/t/google-dark-theme-juanmtech/164225
+
+title: Home
+views:
+  - title: IPAD-MINI
+    path: ipad-mini
+    type: sidebar
+    theme: Google Dark Theme
+    icon: mdi:application-settings-outline
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:bignumber-card
+            title: PV Energy Today
+            color: Magenta
+            entity: sensor.givtcp_ed2248g441_pv_energy_today_kwh
+            scale: 18px
+            from: top
+            min: 10
+            max: 10
+          - type: custom:bignumber-card
+            title: Import Energy
+            entity: sensor.givtcp_ed2248g441_import_energy_today_kwh
+            color: Red
+            scale: 18px
+            from: bottom
+            min: 10
+            max: 10
+          - type: custom:bignumber-card
+            title: Export Engergy
+            entity: sensor.givtcp_ed2248g441_export_energy_today_kwh
+            color: cyan
+            scale: 18px
+            from: top
+            min: 10
+            max: 10
+          - type: custom:bignumber-card
+            title: Hypervolt
+            icon: mdi:ev-plug-type2
+            round: 1
+            entity: sensor.hypervolt_energy
+            color: Orange
+            scale: 18px
+            from: top
+            min: 10
+            max: 10
+      - type: horizontal-stack
+        cards:
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.distribution_board_power
+                icon: mdi:power-socket
+                attribute: Power
+                decimals: 0
+                name: Consumer Unit
+                unit: W
+              - entity: sensor.shellyem_485519c9bf81_channel_2_power
+                attribute: Power
+                decimals: 0
+                unit: W
+                icon: mdi:power-socket-uk
+              - entity: sensor.shellyem_485519c9bf81_channel_1_power
+                attribute: Power
+                decimals: 0
+                unit: W
+                icon: mdi:lightbulb-spot
+            show:
+              horseshoe_style: lineargradient
+            layout:
+              hlines:
+                - id: 0
+                  xpos: 50
+                  ypos: 42
+                  length: 40
+                  styles:
+                    - stroke: var(--primary-text-color);
+                    - stroke-width: 5;
+                    - stroke-linecap: round;
+                    - opacity: 0.7;
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 34
+                  styles:
+                    - font-size: 3em;
+                - id: 1
+                  entity_index: 1
+                  xpos: 40
+                  ypos: 57
+                  styles:
+                    - text-anchor: start;
+                    - font-size: 1.5em;
+                - id: 2
+                  entity_index: 2
+                  xpos: 40
+                  ypos: 72
+                  styles:
+                    - text-anchor: start;
+                    - font-size: 1.5em;
+              icons:
+                - id: 0
+                  entity_index: 1
+                  xpos: 37
+                  ypos: 57
+                  align: end
+                  size: 1.3
+                - id: 1
+                  entity_index: 2
+                  xpos: 37
+                  ypos: 72
+                  align: end
+                  size: 1.3
+              names:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 95
+            horseshoe_scale:
+              min: 0
+              max: 9500
+            color_stops:
+              '1': green
+              '100': orange
+              '1000': red
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.givtcp_ed2248g441_pv_power
+                icon: mdi:power-socket
+                attribute: Power
+                decimals: 0
+                name: Solar PV
+                unit: W
+              - entity: sensor.givtcp_ed2248g441_pv_energy_today_kwh
+                attribute: Power
+                decimals: 1
+                unit: kWh
+                icon: mdi:solar-power
+              - entity: sensor.solcast_pv_forecast_forecast_today
+                attribute: time
+                decimals: 1
+                unit: kWh (FCT)
+                icon: mdi:solar-power
+            show:
+              horseshoe_style: lineargradient
+            layout:
+              hlines:
+                - id: 0
+                  xpos: 50
+                  ypos: 42
+                  length: 40
+                  styles:
+                    - stroke: var(--primary-text-color);
+                    - stroke-width: 5;
+                    - stroke-linecap: round;
+                    - opacity: 0.7;
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 34
+                  styles:
+                    - font-size: 3em;
+                - id: 1
+                  entity_index: 1
+                  xpos: 40
+                  ypos: 57
+                  styles:
+                    - text-anchor: start;
+                    - font-size: 1.5em;
+                - id: 2
+                  entity_index: 2
+                  xpos: 40
+                  ypos: 72
+                  styles:
+                    - text-anchor: start;
+                    - font-size: 1.5em;
+              icons:
+                - id: 0
+                  entity_index: 1
+                  xpos: 37
+                  ypos: 57
+                  align: end
+                  size: 1.3
+                - id: 1
+                  entity_index: 2
+                  xpos: 37
+                  ypos: 72
+                  align: end
+                  size: 1.3
+              names:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 95
+            horseshoe_scale:
+              min: 0
+              max: 7400
+            color_stops:
+              '0': red
+              '250': orange
+              '750': green
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.shellyem_c45bbe77785d_channel_2_power
+                icon: mdi:power-socket
+                attribute: Power
+                decimals: 0
+                name: Hypervolt
+                unit: W
+              - entity: sensor.hypervolt_charger_current
+                attribute: Power
+                decimals: 0
+                unit: A
+                icon: mdi:ev-plug-type2
+              - entity: sensor.hypervolt_energy
+                attribute: Power
+                decimals: 0
+                unit: kWH
+                icon: mdi:cash-clock
+            show:
+              horseshoe_style: lineargradient
+            layout:
+              hlines:
+                - id: 0
+                  xpos: 50
+                  ypos: 42
+                  length: 40
+                  styles:
+                    - stroke: var(--primary-text-color);
+                    - stroke-width: 5;
+                    - stroke-linecap: round;
+                    - opacity: 0.7;
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 34
+                  styles:
+                    - font-size: 3em;
+                - id: 1
+                  entity_index: 1
+                  xpos: 40
+                  ypos: 57
+                  styles:
+                    - text-anchor: start;
+                    - font-size: 1.5em;
+                - id: 2
+                  entity_index: 2
+                  xpos: 40
+                  ypos: 72
+                  styles:
+                    - text-anchor: start;
+                    - font-size: 1.5em;
+              icons:
+                - id: 0
+                  entity_index: 1
+                  xpos: 37
+                  ypos: 57
+                  align: end
+                  size: 1.3
+                - id: 1
+                  entity_index: 2
+                  xpos: 37
+                  ypos: 72
+                  align: end
+                  size: 1.3
+              names:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 95
+            horseshoe_scale:
+              min: 0
+              max: 7500
+            color_stops:
+              '0': green
+              '100': orange
+              '1000': red
+      - type: horizontal-stack
+        cards:
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.givtcp_ed2248g441_load_power
+                attribute: temperature
+                decimals: 0
+                unit: W
+                area: Grid Load
+            show:
+              horseshoe_style: lineargradient
+            layout:
+              hlines:
+                - id: 0
+                  xpos: 50
+                  ypos: 39
+                  length: 40
+                  styles:
+                    - stroke: var(--primary-text-color);
+                    - stroke-width: 5;
+                    - stroke-linecap: round;
+                    - opacity: 0.7;
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 3.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 35
+                  styles:
+                    - font-size: 1.0em;
+                    - opacity: 0.8;
+            horseshoe_scale:
+              min: 0
+              max: 12000
+            color_stops:
+              '0': green
+              '100': orange
+              '1000': red
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.givtcp_ed2248g441_import_power
+                attribute: Power
+                decimals: 0
+                unit: W
+                area: Import Power
+            show:
+              horseshoe_style: lineargradient
+            layout:
+              hlines:
+                - id: 0
+                  xpos: 50
+                  ypos: 39
+                  length: 50
+                  styles:
+                    - stroke: var(--primary-text-color);
+                    - stroke-width: 5;
+                    - stroke-linecap: round;
+                    - opacity: 0.7;
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 3.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 35
+                  styles:
+                    - font-size: 1.0em;
+                    - opacity: 0.8;
+            horseshoe_scale:
+              min: 0
+              max: 15000
+            color_stops:
+              '0': green
+              '100': orange
+              '1000': red
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.givtcp_ed2248g441_export_power
+                attribute: Power
+                decimals: 0
+                unit: W
+                area: Export Power
+            show:
+              horseshoe_style: lineargradient
+            layout:
+              hlines:
+                - id: 0
+                  xpos: 50
+                  ypos: 39
+                  length: 50
+                  styles:
+                    - stroke: var(--primary-text-color);
+                    - stroke-width: 5;
+                    - stroke-linecap: round;
+                    - opacity: 0.7;
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 3.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 35
+                  styles:
+                    - font-size: 1.0em;
+                    - opacity: 0.8;
+            horseshoe_scale:
+              min: 0
+              max: 5000
+            color_stops:
+              '1000': green
+        view_layout:
+          position: main
+      - type: horizontal-stack
+        cards:
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.givtcp_ed2248g441_charge_power
+                attribute: temperature
+                decimals: 0
+                unit: W
+                area: Charge Power
+            show:
+              horseshoe_style: lineargradient
+            layout:
+              hlines:
+                - id: 0
+                  xpos: 50
+                  ypos: 39
+                  length: 40
+                  styles:
+                    - stroke: var(--primary-text-color);
+                    - stroke-width: 5;
+                    - stroke-linecap: round;
+                    - opacity: 0.7;
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 3.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 35
+                  styles:
+                    - font-size: 1.0em;
+                    - opacity: 0.8;
+            horseshoe_scale:
+              min: 0
+              max: 3600
+            color_stops:
+              '0': red
+              '100': orange
+              '1000': green
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.givtcp_ed2248g441_soc
+                icon: mdi:power-socket
+                attribute: Power
+                decimals: 0
+                name: Battery
+                unit: null
+              - entity: sensor.givtcp_ed2248g441_soc_kwh
+                attribute: Power
+                decimals: 1
+                unit: kWh
+                icon: mdi:battery-50
+              - entity: sensor.time_left_sensor
+                attribute: time
+                decimals: 1
+                unit: Hrs Left
+                icon: mdi:clock
+            show:
+              horseshoe_style: lineargradient
+            layout:
+              hlines:
+                - id: 0
+                  xpos: 50
+                  ypos: 42
+                  length: 40
+                  styles:
+                    - stroke: var(--primary-text-color);
+                    - stroke-width: 5;
+                    - stroke-linecap: round;
+                    - opacity: 0.7;
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 34
+                  styles:
+                    - font-size: 3em;
+                - id: 1
+                  entity_index: 1
+                  xpos: 40
+                  ypos: 57
+                  styles:
+                    - text-anchor: start;
+                    - font-size: 1.5em;
+                - id: 2
+                  entity_index: 2
+                  xpos: 40
+                  ypos: 72
+                  styles:
+                    - text-anchor: start;
+                    - font-size: 1.5em;
+              icons:
+                - id: 0
+                  entity_index: 1
+                  xpos: 37
+                  ypos: 57
+                  align: end
+                  size: 1.3
+                - id: 1
+                  entity_index: 2
+                  xpos: 37
+                  ypos: 72
+                  align: end
+                  size: 1.3
+              names:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 95
+            horseshoe_scale:
+              min: 0
+              max: 100
+            color_stops:
+              '0': red
+              '50': orange
+              '100': green
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.givtcp_ed2248g441_invertor_temperature
+                icon: mdi:power-socket
+                attribute: Power
+                decimals: 0
+                name: Inverter Temp
+                unit: °C
+              - entity: sensor.givtcp_dx2243g324_battery_temperature
+                attribute: Power
+                decimals: 0
+                unit: °C (Batt)
+                icon: mdi:temperature-celsius
+              - entity: sensor.givtcp_ed2248g441_solar_to_battery
+                attribute: Power
+                decimals: 0
+                unit: PV 2 Battery
+                icon: mdi:lightbulb-spot
+            show:
+              horseshoe_style: colorstopgradient
+            layout:
+              hlines:
+                - id: 0
+                  xpos: 50
+                  ypos: 42
+                  length: 40
+                  styles:
+                    - stroke: var(--primary-text-color);
+                    - stroke-width: 5;
+                    - stroke-linecap: round;
+                    - opacity: 0.7;
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 34
+                  styles:
+                    - font-size: 3em;
+                - id: 1
+                  entity_index: 1
+                  xpos: 40
+                  ypos: 57
+                  styles:
+                    - text-anchor: start;
+                    - font-size: 1.3em;
+              icons:
+                - id: 0
+                  entity_index: 1
+                  xpos: 37
+                  ypos: 57
+                  align: end
+                  size: 1
+              names:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 95
+            horseshoe_scale:
+              min: 0
+              max: 60
+            color_stops:
+              '33': green
+              '35': orange
+              '43': red
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - elements:
+                  - entity: sensor.time
+                    style:
+                      color: var(--primary-text-color)
+                      font-size: 450%
+                      left: 50%
+                      top: 35%
+                    type: state-label
+                  - entity: sensor.date
+                    style:
+                      color: var(--secondary-text-color)
+                      font-size: 250%
+                      left: 50%
+                      top: 75%
+                    type: state-label
+                image: /local/Images/bk-bg_1.svg
+                type: picture-elements
+              - type: weather-forecast
+                entity: weather.home_2
+          - type: horizontal-stack
+            cards:
+              - type: custom:flex-horseshoe-card
+                entities:
+                  - entity: sensor.givtcp_ed2248g441_solar_to_house
+                    attribute: volatage
+                    decimals: 0
+                    unit: W
+                    area: Solar to House
+                show:
+                  horseshoe_style: lineargradient
+                layout:
+                  hlines:
+                    - id: 0
+                      xpos: 50
+                      ypos: 39
+                      length: 40
+                      styles:
+                        - stroke: var(--primary-text-color);
+                        - stroke-width: 5;
+                        - stroke-linecap: round;
+                        - opacity: 0.7;
+                  states:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 60
+                      styles:
+                        - font-size: 3.5em;
+                  areas:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 35
+                      styles:
+                        - font-size: 1.0em;
+                        - opacity: 0.8;
+                horseshoe_scale:
+                  min: 0
+                  max: 12000
+                color_stops:
+                  '0': green
+                  '100': orange
+                  '1000': red
+              - type: custom:flex-horseshoe-card
+                entities:
+                  - entity: sensor.givtcp_ed2248g441_solar_to_grid
+                    attribute: Power
+                    decimals: 0
+                    unit: W
+                    area: Solar to Grid
+                show:
+                  horseshoe_style: lineargradient
+                layout:
+                  hlines:
+                    - id: 0
+                      xpos: 50
+                      ypos: 39
+                      length: 50
+                      styles:
+                        - stroke: var(--primary-text-color);
+                        - stroke-width: 5;
+                        - stroke-linecap: round;
+                        - opacity: 0.7;
+                  states:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 60
+                      styles:
+                        - font-size: 3.5em;
+                  areas:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 35
+                      styles:
+                        - font-size: 1.0em;
+                        - opacity: 0.8;
+                horseshoe_scale:
+                  min: 0
+                  max: 15000
+                color_stops:
+                  '0': green
+                  '100': orange
+                  '1000': red
+              - type: custom:flex-horseshoe-card
+                entities:
+                  - entity: sensor.givtcp_ed2248g441_solar_to_battery
+                    attribute: Power
+                    decimals: 0
+                    unit: W
+                    area: Solar to Battery
+                show:
+                  horseshoe_style: lineargradient
+                layout:
+                  hlines:
+                    - id: 0
+                      xpos: 50
+                      ypos: 39
+                      length: 50
+                      styles:
+                        - stroke: var(--primary-text-color);
+                        - stroke-width: 5;
+                        - stroke-linecap: round;
+                        - opacity: 0.7;
+                  states:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 60
+                      styles:
+                        - font-size: 3.5em;
+                  areas:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 35
+                      styles:
+                        - font-size: 1.0em;
+                        - opacity: 0.8;
+                horseshoe_scale:
+                  min: 0
+                  max: 5000
+                color_stops:
+                  '1000': green
+            view_layout:
+              position: main
+          - type: horizontal-stack
+            cards:
+              - type: custom:flex-horseshoe-card
+                entities:
+                  - entity: sensor.givtcp_ed2248g441_battery_to_house
+                    attribute: voltage
+                    decimals: 0
+                    unit: W
+                    area: Battery to House
+                show:
+                  horseshoe_style: lineargradient
+                layout:
+                  hlines:
+                    - id: 0
+                      xpos: 50
+                      ypos: 39
+                      length: 40
+                      styles:
+                        - stroke: var(--primary-text-color);
+                        - stroke-width: 5;
+                        - stroke-linecap: round;
+                        - opacity: 0.7;
+                  states:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 60
+                      styles:
+                        - font-size: 3.5em;
+                  areas:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 35
+                      styles:
+                        - font-size: 1.0em;
+                        - opacity: 0.8;
+                horseshoe_scale:
+                  min: 0
+                  max: 3600
+                color_stops:
+                  '0': green
+                  '100': orange
+                  '1000': red
+              - type: custom:flex-horseshoe-card
+                entities:
+                  - entity: sensor.givtcp_ed2248g441_battery_to_grid
+                    attribute: Power
+                    decimals: 0
+                    unit: W
+                    area: Battery to Grid
+                show:
+                  horseshoe_style: lineargradient
+                layout:
+                  hlines:
+                    - id: 0
+                      xpos: 50
+                      ypos: 39
+                      length: 50
+                      styles:
+                        - stroke: var(--primary-text-color);
+                        - stroke-width: 5;
+                        - stroke-linecap: round;
+                        - opacity: 0.7;
+                  states:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 60
+                      styles:
+                        - font-size: 3.5em;
+                  areas:
+                    - id: 0
+                      entity_index: 0
+                      xpos: 50
+                      ypos: 35
+                      styles:
+                        - font-size: 1.0em;
+                        - opacity: 0.8;
+                horseshoe_scale:
+                  min: 0
+                  max: 3600
+                color_stops:
+                  '0': green
+                  '100': orange
+                  '1000': red
+            view_layout:
+              position: main
+          - type: entities
+            entities:
+              - entity: binary_sensor.octopus_intelligent_slot
+              - entity: sensor.active_battery_discharge_rate
+                icon: mdi:battery-medium
+              - entity: sensor.atomant_battery
+                name: Tesla
+              - entity: sensor.atomant_state_of_charge
+                name: VW-ID3
+              - entity: number.hypervolt_max_current
+              - entity: sensor.solcast_pv_forecast_forecast_tomorrow
+                name: Solcast PV Forecast Tomorrow
+              - entity: select.givtcp_ed2248g441_force_charge
+                name: Battery Force Charge
+              - entity: select.givtcp_ed2248g441_force_export
+                name: Battery Force Export
+              - entity: select.hypervolt_activation_mode
+              - entity: select.hypervolt_charge_mode
+              - entity: switch.hypervolt_charging
+              - entity: switch.hypervolt_lock_state
+            theme: Google Dark Theme
+            state_color: true
+            view_layout:
+              position: main
+          - type: vertical-stack
+            cards:
+              - type: custom:config-template-card
+                variables:
+                  - entity: sensor.workstation_current_consumption
+                    name: Workstation
+                  - entity: sensor.dryer_current_consumption
+                    name: Dryer
+                  - entity: sensor.washing_machine_current_consumption
+                    name: Washing Machine
+                  - entity: sensor.dishwasher_current_consumption
+                    name: Dish Washer
+                  - entity: sensor.tv_media_current_consumption
+                    name: TV/Media
+                entities:
+                  - sensor.sonoff_1000ae8a6d_power
+                  - sensor.workstation_current_consumption
+                  - sensor.data_centre_current_consumption
+                  - sensor.dryer_current_consumption
+                  - sensor.washing_machine_current_consumption
+                  - sensor.dishwasher_current_consumption
+                  - sensor.tv_media_current_consumption
+                element:
+                  type: custom:bar-card
+                  entities: >-
+                    ${vars.filter(v => states[v.entity].state > 5).sort((v1,v2)
+                    => states[v2.entity].state-states[v1.entity].state)}
+                  direction: right
+                  entity_row: true
+                  min: 0
+                  max: ${ Math.max(...vars.map(v => states[v.entity].state))}
+                  height: 20px
+                  stack: vertical
+                  decimal: 0
+                  icon: mdi:flash
+                  positions:
+                    icon: 'off'
+                    indicator: outside
+                    name: inside
+                    value: inside
+                  severity:
+                    - color: '#a1a1a18a'
+                      from: 0
+                      to: 2
+                    - color: '#3ea8328a'
+                      from: 2
+                      to: 10
+                    - color: '#85a8328a'
+                      from: 10
+                      to: 50
+                    - color: '#a8a4328a'
+                      from: 50
+                      to: 200
+                    - color: '#a887328a'
+                      from: 200
+                      to: 500
+                    - color: '#a867328a'
+                      from: 500
+                      to: 1000
+                    - color: '#a846328a'
+                      from: 1000
+                      to: 3000
+                    - color: '#a832328a'
+                      from: 3000
+                      to: 10000
+                  style: "#states > * {\n  margin: 1px;\n}\nbar-card-name,\nbar-card-value {\n  font-size: 0.9rem;\n  color: #ffffffaa;\n  font-weight: bold;\n}\nbar-card-value\t{\n  font-weight: bolder;\n}\nbar-card-indicator {\n  margin-top: 4px;\n  transform: scaleY(-1);\n}"
+              - type: custom:config-template-card
+                variables:
+                  - entity: sensor.givtcp_dx2243g324_battery_temperature
+                    name: GivEnergy Battery Temperature
+                  - entity: sensor.givtcp_ed2248g441_invertor_temperature
+                    name: GivEnergy Hybrid Inverter Temperature
+                  - entity: sensor.sonoff_100149a8fb_temperature
+                    name: Comms Cabinet Temperature
+                  - entity: sensor.dream_machine_pro_cpu_temperature
+                    name: Dream Machine Pro CPU Temperature
+                  - entity: sensor.shellyflood_014494_temperature
+                    name: Rafter Ambient Temperature
+                entities:
+                  - sensor.givtcp_dx2243g324_battery_temperature
+                  - sensor.givtcp_ed2248g441_invertor_temperature
+                  - sensor.sonoff_100149a8fb_temperature
+                  - sensor.dream_machine_pro_cpu_temperature
+                  - sensor.shellyflood_014494_temperature
+                element:
+                  type: custom:bar-card
+                  entities: >-
+                    ${vars.filter(v => states[v.entity].state > 5).sort((v1,v2)
+                    => states[v2.entity].state-states[v1.entity].state)}
+                  direction: right
+                  entity_row: true
+                  min: 0
+                  max: ${ Math.max(...vars.map(v => states[v.entity].state))}
+                  height: 20px
+                  stack: vertical
+                  decimal: 0
+                  icon: mdi:flash
+                  positions:
+                    icon: 'off'
+                    indicator: outside
+                    name: inside
+                    value: inside
+                  severity:
+                    - color: Blue
+                      from: 0
+                      to: 15
+                    - color: Green
+                      from: 15
+                      to: 30
+                    - color: Red
+                      from: 30
+                      to: 80
+                  style: "#states > * {\n  margin: 1px;\n}\nbar-card-name,\nbar-card-value {\n  font-size: 0.9rem;\n  color: #ffffffaa;\n  font-weight: bold;\n}\nbar-card-value\t{\n  font-weight: bolder;\n}\nbar-card-indicator {\n  margin-top: 4px;\n  transform: scaleY(-1);\n}"
+        view_layout:
+          position: sidebar
