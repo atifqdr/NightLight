@@ -1,12 +1,3 @@
-https://www.facebook.com/groups/489882062425810/permalink/842945760452770/
-
-Home Assistant Dashboard based on flex-horseshoe-card  and google Dark Theme 
-
-Pre-reqs: 
-https://github.com/AmoebeLabs/flex-horseshoe-card
-
-https://community.home-assistant.io/t/google-dark-theme-juanmtech/164225
-
 title: Home
 views:
   - title: IPAD-MINI
