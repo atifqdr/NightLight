@@ -12,14 +12,14 @@ views:
           - type: custom:bignumber-card
             title: PV Energy Today
             color: Magenta
-            entity: sensor.givtcp_ed2248g441_pv_energy_today_kwh
+            entity: sensor.givtcp_ed2248bXXX_pv_energy_today_kwh
             scale: 18px
             from: top
             min: 10
             max: 10
           - type: custom:bignumber-card
             title: Import Energy
-            entity: sensor.givtcp_ed2248g441_import_energy_today_kwh
+            entity: sensor.givtcp_ed2248bXXX_import_energy_today_kwh
             color: Red
             scale: 18px
             from: bottom
@@ -27,7 +27,7 @@ views:
             max: 10
           - type: custom:bignumber-card
             title: Export Engergy
-            entity: sensor.givtcp_ed2248g441_export_energy_today_kwh
+            entity: sensor.givtcp_ed2248bXXX_export_energy_today_kwh
             color: cyan
             scale: 18px
             from: top
@@ -124,13 +124,13 @@ views:
               '1000': red
           - type: custom:flex-horseshoe-card
             entities:
-              - entity: sensor.givtcp_ed2248g441_pv_power
+              - entity: sensor.givtcp_ed2248bXXX_pv_power
                 icon: mdi:power-socket
                 attribute: Power
                 decimals: 0
                 name: Solar PV
                 unit: W
-              - entity: sensor.givtcp_ed2248g441_pv_energy_today_kwh
+              - entity: sensor.givtcp_ed2248bXXX_pv_energy_today_kwh
                 attribute: Power
                 decimals: 1
                 unit: kWh
@@ -280,7 +280,7 @@ views:
         cards:
           - type: custom:flex-horseshoe-card
             entities:
-              - entity: sensor.givtcp_ed2248g441_load_power
+              - entity: sensor.givtcp_ed2248bXXX_load_power
                 attribute: temperature
                 decimals: 0
                 unit: W
@@ -322,7 +322,7 @@ views:
               '1000': red
           - type: custom:flex-horseshoe-card
             entities:
-              - entity: sensor.givtcp_ed2248g441_import_power
+              - entity: sensor.givtcp_ed2248bXXX_import_power
                 attribute: Power
                 decimals: 0
                 unit: W
@@ -364,7 +364,7 @@ views:
               '1000': red
           - type: custom:flex-horseshoe-card
             entities:
-              - entity: sensor.givtcp_ed2248g441_export_power
+              - entity: sensor.givtcp_ed2248bXXX_export_power
                 attribute: Power
                 decimals: 0
                 unit: W
@@ -408,7 +408,7 @@ views:
         cards:
           - type: custom:flex-horseshoe-card
             entities:
-              - entity: sensor.givtcp_ed2248g441_charge_power
+              - entity: sensor.givtcp_ed2248bXXX_charge_power
                 attribute: temperature
                 decimals: 0
                 unit: W
@@ -450,13 +450,13 @@ views:
               '1000': green
           - type: custom:flex-horseshoe-card
             entities:
-              - entity: sensor.givtcp_ed2248g441_soc
+              - entity: sensor.givtcp_ed2248bXXX_soc
                 icon: mdi:power-socket
                 attribute: Power
                 decimals: 0
                 name: Battery
                 unit: null
-              - entity: sensor.givtcp_ed2248g441_soc_kwh
+              - entity: sensor.givtcp_ed2248bXXX_soc_kwh
                 attribute: Power
                 decimals: 1
                 unit: kWh
@@ -527,7 +527,7 @@ views:
               '100': green
           - type: custom:flex-horseshoe-card
             entities:
-              - entity: sensor.givtcp_ed2248g441_invertor_temperature
+              - entity: sensor.givtcp_ed2248bXXX_invertor_temperature
                 icon: mdi:power-socket
                 attribute: Power
                 decimals: 0
@@ -538,7 +538,7 @@ views:
                 decimals: 0
                 unit: °C (Batt)
                 icon: mdi:temperature-celsius
-              - entity: sensor.givtcp_ed2248g441_solar_to_battery
+              - entity: sensor.givtcp_ed2248bXXX_solar_to_battery
                 attribute: Power
                 decimals: 0
                 unit: PV 2 Battery
@@ -616,7 +616,7 @@ views:
             cards:
               - type: custom:flex-horseshoe-card
                 entities:
-                  - entity: sensor.givtcp_ed2248g441_solar_to_house
+                  - entity: sensor.givtcp_ed2248bXXX_solar_to_house
                     attribute: volatage
                     decimals: 0
                     unit: W
@@ -658,7 +658,7 @@ views:
                   '1000': red
               - type: custom:flex-horseshoe-card
                 entities:
-                  - entity: sensor.givtcp_ed2248g441_solar_to_grid
+                  - entity: sensor.givtcp_ed2248bXXX_solar_to_grid
                     attribute: Power
                     decimals: 0
                     unit: W
@@ -700,7 +700,7 @@ views:
                   '1000': red
               - type: custom:flex-horseshoe-card
                 entities:
-                  - entity: sensor.givtcp_ed2248g441_solar_to_battery
+                  - entity: sensor.givtcp_ed2248bXXX_solar_to_battery
                     attribute: Power
                     decimals: 0
                     unit: W
@@ -744,7 +744,7 @@ views:
             cards:
               - type: custom:flex-horseshoe-card
                 entities:
-                  - entity: sensor.givtcp_ed2248g441_battery_to_house
+                  - entity: sensor.givtcp_ed2248bXXX_battery_to_house
                     attribute: voltage
                     decimals: 0
                     unit: W
@@ -786,7 +786,7 @@ views:
                   '1000': red
               - type: custom:flex-horseshoe-card
                 entities:
-                  - entity: sensor.givtcp_ed2248g441_battery_to_grid
+                  - entity: sensor.givtcp_ed2248bXXX_battery_to_grid
                     attribute: Power
                     decimals: 0
                     unit: W
@@ -840,9 +840,9 @@ views:
               - entity: number.hypervolt_max_current
               - entity: sensor.solcast_pv_forecast_forecast_tomorrow
                 name: Solcast PV Forecast Tomorrow
-              - entity: select.givtcp_ed2248g441_force_charge
+              - entity: select.givtcp_ed2248bXXX_force_charge
                 name: Battery Force Charge
-              - entity: select.givtcp_ed2248g441_force_export
+              - entity: select.givtcp_ed2248bXXX_force_export
                 name: Battery Force Export
               - entity: select.hypervolt_activation_mode
               - entity: select.hypervolt_charge_mode
@@ -922,7 +922,7 @@ views:
                 variables:
                   - entity: sensor.givtcp_dx2243g324_battery_temperature
                     name: GivEnergy Battery Temperature
-                  - entity: sensor.givtcp_ed2248g441_invertor_temperature
+                  - entity: sensor.givtcp_ed2248bXXX_invertor_temperature
                     name: GivEnergy Hybrid Inverter Temperature
                   - entity: sensor.sonoff_100149a8fb_temperature
                     name: Comms Cabinet Temperature
@@ -932,7 +932,7 @@ views:
                     name: Rafter Ambient Temperature
                 entities:
                   - sensor.givtcp_dx2243g324_battery_temperature
-                  - sensor.givtcp_ed2248g441_invertor_temperature
+                  - sensor.givtcp_ed2248bXXX_invertor_temperature
                   - sensor.sonoff_100149a8fb_temperature
                   - sensor.dream_machine_pro_cpu_temperature
                   - sensor.shellyflood_014494_temperature
