@@ -1,2 +1,2 @@
-# NighLight
-Dashboard based on flex-horseshoe-card  and google Dark Theme
+# NightLight
+Dashboard based on flex-horseshoe-card  and Google Dark Theme
