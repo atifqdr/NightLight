@@ -1,5 +1,7 @@
 # NightLight
-Dashboard based on flex-horseshoe-card, Google Dark Theme and Big Number Card
+Lovelace dashboard based on flex-horseshoe-card, Google Dark Theme and Big Number Card. The view is made up of nested horizontal and vertical stacks. 
+
+Dashboard: extract from raw configuration editor! You can pin your own sensors! 
 
 Pre-reqs: 
 
